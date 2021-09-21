@@ -24,7 +24,7 @@ def charging():
        HOME_PATH = "Home"
        # status shows the status of the subtree , whether is suceed, failed, and running, 
        NodesDic["Node2"] = "SUCCEED"
-   # battery is fully charged    
+       # battery is fully charged    
        BB["BATTERY_LEVEL"] = 100 
        P = 2
 BB["BATTERY_LEVEL"] = 100  
@@ -33,7 +33,7 @@ t_run = time.time() + 160
 while(time.time() < t_run ):
  NodesDic["Node1"] = "Running"
  print("inside main while, BATTERY_LEVEL",BB["BATTERY_LEVEL"])
-#check for the priority
+# check for the priority
  if (P==1):
    NodesDic["Node2"] = "Running"
   
@@ -49,7 +49,7 @@ while(time.time() < t_run ):
        HOME_PATH = "Home"
        # status shows the status of the subtree , whether is suceed, failed, and running, 
        NodesDic["Node2"] = "SUCCEED"
-   # battery is fully charged    
+       # battery is fully charged    
        BB["BATTERY_LEVEL"] = 100 
 
    else:   
@@ -57,7 +57,7 @@ while(time.time() < t_run ):
        BB["BATTERY_LEVEL"] -= consumption
 
    P = 2    
-#   yeild STATUS 
+   #   yeild STATUS 
 
 
 
@@ -194,7 +194,6 @@ while(time.time() < t_run ):
             NodesDic["Node5"] = "Failed"
             #if node5 fails, node3 depends on node4, if node4 is running, node3 is running. If it fails or succeeds, node3 will fail/succeed too.
             NodesDic["Node3"] = NodesDic["Node4"] #"Failed"
-        #Q: where do we get the input for CF?
             print("Node5: ", NodesDic["Node5"] ,"and node4 has ", NodesDic["Node4"])
  #          print("Nodes state dictionary when P=2 and GENERAL = Done: ")
             #pprint.pprint(NodesDic)
